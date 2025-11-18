@@ -8,21 +8,23 @@
 </head>
 <body>
     <header>
-        <h1>Empire d'Elon Musk</h1>
-        <nav class="flex_banner">
-            <a class="txt_white" href="index.html">Accueil</a>
-            <a class="txt_white" href="">Tesla</a>
-            <a class="txt_white" href="">SpaceX</a>
-            <a class="txt_white" href="">NeuraLink</a>
+        <!-- Banner -->
+        <h1 class="txt_orbitron">L'Empire d'Elon Musk</h1>
+        <nav class="flex_banner txt_bold">
+            <a class="txt_white" href="index.html"><img src="./images/accueil.png" height="15" title="Accueil" alt="Accueil"></a>
+            <a class="txt_white" href="fansite1/fansite1.html"><img src="./images/logo_tesla.jpg" height="15" title="Tesla" alt="TESLA"></a>
+            <a class="txt_white" href="fansite2/fansite2.html"><img class="logo_banner" src="./images/logo_spacex.jpg" height="25" title="SpaceX" alt="SPACEX"></a>
+            <a class="txt_white" href="fansite3/fansite3.html"><img class="logo_banner" src="./images/logo_neuralink.jpg" height="50" title="NeuraLink" alt="NEURALINK"></a>
         </nav>
     </header>
 
     <main>
+        <!-- Description -->
         <h2>Présentation :</h2>
         <div class="img_elon">
             <img src="./images/ElonMusk.jpg" title="Elon Musk" alt="Elon Musk">
         </div>
-        <p>Elon Musk, né en 1971, est un entrepreneur et milliardaire connu pour avoir fondé SpaceX en 2002,
+        <p class="margin presentation">Elon Musk, né en 1971, est un entrepreneur et milliardaire connu pour avoir fondé SpaceX en 2002,
             une société d’aérospatiale et de transport spatial dont il est toujours le PDG.
             L’objectif de SpaceX est de réduire les coûts d’accès à l’espace et de rendre possible la colonisation de Mars.
             Avant SpaceX, Musk cofonde Zip2 puis X.com, devenue PayPal. Ensuite, il rejoint Tesla en 2004 et en devient le PDG en 2008.
@@ -33,9 +35,11 @@
     </main>
 
     <aside>
+        <!-- Compagnies box -->
         <h2>Entreprises :</h2>
-        <div class="companies">
-            <a class="company tesla txt_bold" href="https://starlink.com">
+        <div class="flex_transparent">
+            <!-- Tesla box -->
+            <a class="border_radius tesla txt_bold add_size" href="./fansite1/fansite1.html">
                 <h3 class="txt_opac">Tesla</h3>
                 <p class="txt_opac">Entreprise innovante qui fabrique des voitures électriques et des solutions énergétiques propres
                     (batteries, solaire...), avec pour mission d'accélérer la transition vers une énergie durable.
@@ -45,7 +49,8 @@
                 <p class="txt_opac txt_blue">Cliquez pour en savoir plus</p>
             </a>
 
-            <a class="company spacex txt_bold" href="https://starlink.com">
+            <!-- SpaceX box -->
+            <a class="border_radius spacex txt_bold add_size" href="./fansite2/fansite2.html">
                 <h3 class="txt_opac">SpaceX</h3>
                 <p class="txt_opac">
                     SpaceX est une entreprise spatiale innovante qui réduit le coût des lancements grâce à ses fusées réutilisables,
@@ -58,7 +63,8 @@
 
             </a>
 
-            <a class="company neuralink txt_bold" href="https://starlink.com">
+            <!-- Neuralink box -->
+            <a class="border_radius neuralink txt_bold add_size" href="./fansite1/fansite1.html">
                 <h3 class="txt_opac">Neuralink</h3>
                 <p class="txt_opac">
                     Neuralink développe des implants cerveau-ordinateur destinés à aider les personnes paralysées à contrôler des appareils par la pensée,
