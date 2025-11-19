@@ -31,6 +31,123 @@
 }
 
 /********************************************
+ * BODY
+ ********************************************/
+.txt_white{
+    color: white;
+}
+body {
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    
+    /* hauteur limitée de l’image (ex : moitié de la page) */
+    height: 50vh; /* tu peux mettre 60vh, 80vh, px… */
+    
+    background-image: url('./images/brain.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    opacity: 1;
+    filter: brightness(50%); /* rendu plus sombre sans toucher au texte */
+
+    z-index: -1; /* passe derrière le contenu */
+
+        height: 100%;
+}
+
+/* Container pour les deux blocs */
+.media-wrapper {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    padding: 40px 10%;
+}
+
+/* Base des deux blocs */
+.medias,
+.photos-videos {
+    position: relative;
+    width: 350px;       /* largeur du carré */
+    height: 250px;      /* hauteur du carré */
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #000;   /* couleur de fond si l’image ne charge pas */
+    cursor: pointer;
+
+    box-shadow: 0 4px 12px rgba(0,0,0,.2);
+    transition: transform .25s, box-shadow .25s;
+}
+
+/* Image de fond */
+.medias::before,
+.photos-videos::before {
+    content:"";
+    position:absolute;
+    inset:0;
+    background-size: cover;
+    background-position: center;
+    opacity: .55;      /* rendu + propre */
+    transition: opacity .25s;
+}
+
+.medias:hover::before,
+.photos-videos:hover::before {
+    opacity: .35;    /* effet au survol */
+}
+
+/* Effet au survol du bloc */
+.medias:hover,
+.photos-videos:hover {
+    transform: scale(1.04);
+    box-shadow: 0 8px 20px rgba(0,0,0,.25);
+}
+
+/* Texte au centre */
+.media-title {
+    position: relative;
+    color: white;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-shadow: 0 2px 6px rgba(0,0,0,.6);
+    z-index: 2;
+}
+.media-wrapper {
+    display: flex;
+    justify-content: center;   /* centre horizontalement */
+    gap: 30px;                 /* espace entre les deux carrés */
+    padding: 40px 0;           /* marge autour */
+}
+
+.medias,
+.photos-videos {
+    position: relative;
+    width: 350px;     /* largeur du bloc */
+    height: 250px;    /* hauteur du bloc */
+    border-radius: 15px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(0,0,0,.2);
+    transition: transform .25s, box-shadow .25s;
+}
+
+
+/********************************************
  * HERO (in CARRER)
  ********************************************/
 .hero {
@@ -323,89 +440,4 @@ button:hover {
     font-size: .85rem;
     color: #777;
     font-style: italic;
-}
-
-/********************************************
- * RESPONSIVE
- ********************************************/
-@media (max-width: 600px) {
-
-    .flex_banner {
-        flex-direction: column;
-        text-align: center;
-        gap: 15px;
-    }
-
-    .nav-links {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .hero {
-        padding: 40px 5%;
-    }
-
-    .hero h2 {
-        font-size: 1.5rem;
-    }
-
-    .photo-grid {
-        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    }
-
-    .photo-item img {
-        height: 200px;
-    }
-
-    .contact-form {
-        padding: 1.2rem;
-    }
-
-    .flex_footer {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .press-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .offer {
-        padding: 20px 5%;
-    }
-}
-
-@media (max-width: 900px) {
-
-    .flex_banner {
-        padding: 10px 3%;
-    }
-
-    .hero {
-        padding: 50px 8%;
-    }
-
-    .photo-grid {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    }
-
-    .press-grid {
-        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    }
-
-    .flex_footer {
-        justify-content: center;
-    }
-}
-
-@media (max-width: 1200px) {
-
-    .photo-grid {
-        max-width: 1200px;
-    }
-
-    .press-grid {
-        max-width: 1000px;
-        margin: auto;
-    }
 }
