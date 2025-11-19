@@ -6,8 +6,9 @@
     align-items: center;
     justify-content: space-between;
     padding: 10px 5%;
-    background: #000;
+    background: #000000;
 }
+
 
 .flex_banner .logo img {
     max-width: 150px;
@@ -30,39 +31,76 @@
     color: #ddd;
 }
 
+
+/********************************************
+ * BODY
+ ********************************************/
+
+body {
+    margin: 0;
+    background: 
+        linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+        url('./images/brain.jpg') center/cover no-repeat;
+}
+
+.txt_white {
+    color: #fff;
+    text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+}
+
+.photos-videos p {
+    background: rgba(0,0,0,0.6);
+    border-radius: 6px;
+    display: inline-block;
+}
+
+.medias p {
+    background: rgba(0,0,0,0.6);
+    border-radius: 6px;
+    display: inline-block;
+}
+
 /********************************************
  * HERO (in CARRER)
  ********************************************/
 .hero {
-    background: #6e6e6e;
+    background: 
+        linear-gradient(#383838, #6e6e6e),
+        url('./images/career_banner.jpg') center/cover no-repeat;
     color: #fff;
     text-align: center;
-    padding: 60px 10%;
+    padding: 100px 10%;
 }
 
 .hero h2 {
-    font-size: 2rem;
-    margin-bottom: 15px;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
 }
 
 .hero p {
-    font-size: 1.1rem;
-    margin-bottom: 20px;
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin: 0 auto 30px;
+    line-height: 1.6;
 }
 
 .btn {
-    background: #fff;
-    color: #9b9fa1;
-    padding: 10px 20px;
-    border-radius: 5px;
+    background: #959595;
+    color: #fff;
+    padding: 12px 24px;
+    border-radius: 30px;
     font-weight: bold;
     text-decoration: none;
-    transition: background .3s;
+    transition: background .3s, transform .2s;
 }
 
 .btn:hover {
-    background: #ddd;
+    background: #b8b8b8;
+    transform: translateY(-3px);
 }
+
 
 /********************************************
  * PHOTO GALLERY
@@ -101,6 +139,7 @@
     object-fit: cover;
     border-radius: 12px;
 }
+
 
 /********************************************
  * CONTACT FORM (in CONTACT)
@@ -177,35 +216,46 @@ button:hover {
 
 .job-card {
     background: #fff;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,.1);
+    padding: 25px;
+    margin-bottom: 25px;
+    border-radius: 12px;
+    box-shadow: 0 6px 14px rgba(0,0,0,.1);
+    border-left: 5px solid #fbfbfb;
+    transition: transform .2s, box-shadow .2s;
+}
+
+.job-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,.15);
 }
 
 .job-card h3 {
-    font-size: 1.2rem;
-    margin-bottom: 5px;
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: #ffffff;
 }
 
 .location {
-    color: #666;
-    font-size: .9rem;
+    color: #ffffff;
+    font-size: .95rem;
+    margin-bottom: 15px;
 }
 
 .btn-small {
-    background: #cad2d8;
+    background: #646464;
     color: #fff;
-    padding: 8px 15px;
-    border-radius: 5px;
+    padding: 8px 18px;
+    border-radius: 30px;
     display: inline-block;
     text-decoration: none;
-    transition: background .3s;
+    transition: background .3s, transform .2s;
 }
 
 .btn-small:hover {
-    background: #adb9c1;
+    background: #b7b7b7;
+    transform: translateY(-2px);
 }
+
 
 /********************************************
  * SIDE INFO (in CARRER)
@@ -265,7 +315,7 @@ button:hover {
  ********************************************/
 .press {
     padding: 60px 10%;
-    background: #f5f7fa;
+    background: #b7b7b7;
 }
 
 .press h2 {
@@ -281,7 +331,7 @@ button:hover {
 }
 
 .press-card {
-    background: #fff;
+    background: #e6e6e6;
     border-radius: 15px;
     overflow: hidden;
     transition: transform .25s, box-shadow .25s;
@@ -304,7 +354,7 @@ button:hover {
 }
 
 .press-content h3 a {
-    color: #727a83;
+    color: #808284;
     text-decoration: none;
     transition: color .3s;
 }
@@ -323,89 +373,4 @@ button:hover {
     font-size: .85rem;
     color: #777;
     font-style: italic;
-}
-
-/********************************************
- * RESPONSIVE
- ********************************************/
-@media (max-width: 600px) {
-
-    .flex_banner {
-        flex-direction: column;
-        text-align: center;
-        gap: 15px;
-    }
-
-    .nav-links {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .hero {
-        padding: 40px 5%;
-    }
-
-    .hero h2 {
-        font-size: 1.5rem;
-    }
-
-    .photo-grid {
-        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-    }
-
-    .photo-item img {
-        height: 200px;
-    }
-
-    .contact-form {
-        padding: 1.2rem;
-    }
-
-    .flex_footer {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    .press-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .offer {
-        padding: 20px 5%;
-    }
-}
-
-@media (max-width: 900px) {
-
-    .flex_banner {
-        padding: 10px 3%;
-    }
-
-    .hero {
-        padding: 50px 8%;
-    }
-
-    .photo-grid {
-        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    }
-
-    .press-grid {
-        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    }
-
-    .flex_footer {
-        justify-content: center;
-    }
-}
-
-@media (max-width: 1200px) {
-
-    .photo-grid {
-        max-width: 1200px;
-    }
-
-    .press-grid {
-        max-width: 1000px;
-        margin: auto;
-    }
 }
