@@ -1,0 +1,272 @@
+h3 {
+    font-size: 165%;
+}
+
+body {
+    position: relative;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; /* couvre TOUT l’écran jusqu’en bas */
+    background-image: url('./../images/fond_espace.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+
+.logo {
+    width: 20%;
+}
+
+.flex_banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 5%;
+    background: #000;
+    margin-bottom: 2%;
+}
+
+.flex_banner .logo img {
+    max-width: 150px;
+}
+
+
+.black_box {
+    background-color: black;
+    padding: 0%;
+    margin: 0%
+}
+
+
+.description {
+    text-align: center;
+    padding: 5%;
+    overflow: hidden; /* évite que le contenu dépasse */
+    text-decoration: none;
+    height: 100%;
+    border: 3px solid black;
+    border-radius: 10%;
+    font-size: 110%;
+    background-image: url('./../images/mars.jpg');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    line-height: 1.5;
+}
+
+.news_box {
+    position: relative;
+    overflow: hidden; /* évite que l'image dépasse*/
+    color:black;
+    text-decoration: none;
+    z-index: 1;
+}
+
+.news_box:hover {
+  box-shadow: 0 16px 60px rgba(0,0,0,0.25);
+  transform: scale(1.02);
+}
+
+
+.news_box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.6;      /* transparence de l'image */
+    z-index: 0;
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: rgba(255, 255, 255, 0.2); /* couche blanche semi-transparente */
+    background-blend-mode: lighten; /* ou overlay selon effet voulu */
+}
+
+.news_box > * {
+    position: relative;
+    z-index: 1; /* texte au-dessus */
+}
+
+.news_box1::before {
+    background-image: url('./../images/actu1.png');
+}
+
+.news_box2::before {
+    background-image: url('./../images/actu2.png');
+}
+
+.flex_product {
+    display: flex;
+    justify-content: center;
+    gap: 10%;
+    flex-wrap:wrap;
+}
+
+.product_box {
+    border: 3px solid white;
+    border-radius: 10px;
+    padding: 2%;
+    width: 30%;
+    margin-bottom: 10%;
+    background-color: black;
+}
+
+.product_box:hover {
+  box-shadow: 0 16px 60px rgba(0,0,0,0.25);
+  transform: scale(1.02);
+}
+
+
+
+.product_background {
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10%;
+    color:white;
+    width: 50%;
+}
+
+.flex_realisation {
+    display: flex;
+    justify-content: center;
+    flex-direction: column
+}
+
+.realisation_box {
+    text-align: center;
+    padding: 5%;
+    overflow: hidden; /* évite que le contenu dépasse */
+    text-decoration: none;
+    height: 100%;
+    border: 3px solid black;
+    border-radius: 10%;
+    font-size: 110%;
+    background-image: url('./../images/espace.png');
+    background-size: 100% 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/*actu*/
+
+.actu_first_title {
+    
+}
+
+.actu_title {
+    font-size: 130%;
+    text-align: left;
+    margin-bottom: 1%;
+}
+
+.actu_p {
+    font-size: 110%;
+}
+
+.actu_box {
+    background-color: white;
+    border: 3px solid black;
+    border-radius: 10%;
+    margin: 5%;
+    padding: 1% 5%;
+}
+
+.img_center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
+.actu_video {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2%;
+    display: block;
+    width: 100%;
+    max-width: 800px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/*CONTACT*/
+.contact-form {
+    max-width: 600px;
+    margin: auto;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,.1);
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+label {
+    font-weight: 600;
+}
+
+input[type="text"],
+select,
+textarea {
+    width: 100%;
+    padding: .7rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+:focus {
+    outline: none;
+}
+
+.checkbox {
+    display: flex;
+    align-items: flex-start;
+    gap: .5rem;
+    font-size: .95rem;
+}
+
+.checkbox input {
+    margin-top: 4px;
+}
+
+button {
+    color: #fff;
+    border: none;
+    padding: .8rem 1.2rem;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background .3s;
+}
+
+button:hover {
+    background: #5a5b5b;
+}
+
+.hero {
+    background: #6e6e6e;
+    color: #fff;
+    text-align: center;
+    padding: 60px 10%;
+}
+
+.hero h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
