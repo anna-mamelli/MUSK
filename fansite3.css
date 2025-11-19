@@ -98,7 +98,7 @@ body::before {
     inset:0;
     background-size: cover;
     background-position: center;
-    opacity: .55;      /* rendu + propre */
+    opacity: .55;   
     transition: opacity .25s;
 }
 
@@ -382,7 +382,7 @@ button:hover {
  ********************************************/
 .press {
     padding: 60px 10%;
-    background: #f5f7fa;
+    background: #c2c2c3;
 }
 
 .press h2 {
