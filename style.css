@@ -1,8 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
-/* *{
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+* {
     margin: 0;
     padding: 0;
-} */
+}
 html {
     background-color: rgb(177, 177, 177);
 }
@@ -45,11 +46,38 @@ h2 {
     font-family: 'Orbitron', sans-serif;
 }
 
+.txt_roboto {
+    font-family: 'Roboto', sans-serif;
+}
 
-.img_elon {
-    background-color: black;
-    background: linear-gradient(to bottom, #000000, #0b7c44);
+.txt_center {
     text-align: center;
+}
+
+
+.flex_elon {
+    display: flex;
+    background-color: black;
+    text-align: center;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2%;
+    padding: 2%;
+    margin-bottom: 5%;
+}
+
+.txt_presentation {
+    border: 3px solid rgb(44, 44, 44);
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    margin-top: 2%;
+    margin-left: 15%;
+    margin-right: 15%;
+    line-height: 1.5;
+    font-size: 120%;
+    padding: 1%;
 }
 
 .presentation {
@@ -60,6 +88,11 @@ h2 {
 .margin {
     margin-left: 2%;
     margin-right: 2%;
+}
+
+.margin_top {
+    margin-top: 3%;
+
 }
 
 .flex_transparent {
