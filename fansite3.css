@@ -42,101 +42,40 @@ body {
 
 body::before {
     content: "";
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    
-    /* hauteur limitée de l’image (ex : moitié de la page) */
-    height: 50vh; /* tu peux mettre 60vh, 80vh, px… */
-    
+    height: 100%; /* couvre TOUT l’écran jusqu’en bas */
     background-image: url('./images/brain.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
-    opacity: 1;
-    filter: brightness(50%); /* rendu plus sombre sans toucher au texte */
-
-    z-index: -1; /* passe derrière le contenu */
-
-        height: 100%;
+    filter: brightness(50%);
+    z-index: -1;
 }
 
-/* Container pour les deux blocs */
+
+/********************************************
+ * MEDIA BLOCK WRAPPER
+ ********************************************/
 .media-wrapper {
     display: flex;
-    gap: 30px;
     justify-content: center;
+    gap: 30px;
     padding: 40px 10%;
 }
 
-/* Base des deux blocs */
+/********************************************
+ * MEDIA BLOCKS (PHOTOS-VIDEOS + MEDIAS)
+ ********************************************/
 .medias,
 .photos-videos {
     position: relative;
-    width: 350px;       /* largeur du carré */
-    height: 250px;      /* hauteur du carré */
-    border-radius: 15px;
     overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    background: #000;   /* couleur de fond si l’image ne charge pas */
-    cursor: pointer;
-
-    box-shadow: 0 4px 12px rgba(0,0,0,.2);
-    transition: transform .25s, box-shadow .25s;
-}
-
-/* Image de fond */
-.medias::before,
-.photos-videos::before {
-    content:"";
-    position:absolute;
-    inset:0;
-    background-size: cover;
-    background-position: center;
-    opacity: .55;   
-    transition: opacity .25s;
-}
-
-.medias:hover::before,
-.photos-videos:hover::before {
-    opacity: .35;    /* effet au survol */
-}
-
-/* Effet au survol du bloc */
-.medias:hover,
-.photos-videos:hover {
-    transform: scale(1.04);
-    box-shadow: 0 8px 20px rgba(0,0,0,.25);
-}
-
-/* Texte au centre */
-.media-title {
-    position: relative;
-    color: white;
-    font-size: 1.8rem;
-    font-weight: bold;
-    text-shadow: 0 2px 6px rgba(0,0,0,.6);
-    z-index: 2;
-}
-.media-wrapper {
-    display: flex;
-    justify-content: center;   /* centre horizontalement */
-    gap: 30px;                 /* espace entre les deux carrés */
-    padding: 40px 0;           /* marge autour */
-}
-
-.medias,
-.photos-videos {
-    position: relative;
-    width: 350px;     /* largeur du bloc */
-    height: 250px;    /* hauteur du bloc */
+    width: 350px;
+    height: 250px;
     border-radius: 15px;
-    overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -146,6 +85,36 @@ body::before {
     transition: transform .25s, box-shadow .25s;
 }
 
+.medias::before,
+.photos-videos::before {
+    content:"";
+    position:absolute;
+    inset:0;
+    background-size: cover;
+    background-position: center;
+    opacity: .55;
+    transition: opacity .25s;
+}
+
+.medias:hover::before,
+.photos-videos:hover::before {
+    opacity: .35;
+}
+
+.medias:hover,
+.photos-videos:hover {
+    transform: scale(1.04);
+    box-shadow: 0 8px 20px rgba(0,0,0,.25);
+}
+
+.media-title {
+    position: relative;
+    color: white;
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-shadow: 0 2px 6px rgba(0,0,0,.6);
+    z-index: 2;
+}
 
 /********************************************
  * HERO (in CARRER)
@@ -254,7 +223,6 @@ textarea {
     outline: none;
 }
 
-/* Checkbox */
 .checkbox {
     display: flex;
     align-items: flex-start;
@@ -349,26 +317,8 @@ button:hover {
 }
 
 /********************************************
- * BACKGROUND IMAGE BLOCKS (in PHOTOS-VIDEOS)
+ * BACKGROUND IMAGES FOR BLOCKS
  ********************************************/
-.photos-videos,
-.medias {
-    position: relative;
-    overflow: hidden;
-    color: black;
-    text-decoration: none;
-}
-
-.photos-videos::before,
-.medias::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    opacity: .6;
-    background-size: cover;
-    background-position: center;
-}
-
 .photos-videos::before {
     background-image: url('./images/contact_neuralink.jpeg');
 }
@@ -440,4 +390,124 @@ button:hover {
     font-size: .85rem;
     color: #777;
     font-style: italic;
+}
+
+/********************************************
+ * RESPONSIVE DESIGN
+ ********************************************/
+
+/* 📱 SMARTPHONE (≤ 600px) */
+@media (max-width: 600px) {
+
+    .media-wrapper {
+        flex-direction: column !important;
+        gap: 20px;
+        padding: 20px 5%;
+        width: 100%;
+    }
+
+    .medias,
+    .photos-videos {
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 200px;
+    }
+
+    .media-title {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+    .medias::before,
+    .photos-videos::before {
+        object-fit: cover;
+    }
+}
+
+/* 📱💻 TABLET (600px – 992px) */
+@media (min-width: 600px) and (max-width: 992px) {
+
+    .media-wrapper {
+        gap: 25px;
+        padding: 30px 5%;
+    }
+
+    .medias,
+    .photos-videos {
+        width: 45%;
+        height: 220px;
+    }
+
+    .media-title {
+        font-size: 1.6rem;
+    }
+
+    body::before {
+        height: 60vh;
+    }
+
+    .photo-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .press-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* 💻 COMPUTER (992px – 1400px) */
+@media (min-width: 992px) and (max-width: 1400px) {
+
+    .media-wrapper {
+        gap: 30px;
+    }
+
+    .medias,
+    .photos-videos {
+        width: 320px;
+        height: 240px;
+    }
+
+    body::before {
+        height: 80vh;
+    }
+
+    .photo-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .press-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* 🖥️ BIG SCREEN (≥ 1400px) */
+@media (min-width: 1400px) {
+
+    .media-wrapper {
+        gap: 40px;
+        padding: 50px 10%;
+    }
+
+    .medias,
+    .photos-videos {
+        width: 400px;
+        height: 300px;
+    }
+
+    .media-title {
+        font-size: 2rem;
+    }
+
+    body::before {
+        height: 100vh;
+    }
+
+    .photo-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .press-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
 }
