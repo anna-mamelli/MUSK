@@ -12,13 +12,15 @@ body::before {
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%; /* couvre TOUT l’écran jusqu’en bas */
+    height: 100%;
     background-image: url('./../images/fond_espace.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     z-index: -1;
 }
+
+/* ---------- HEADER ---------- */
 
 .logo {
     width: 20%;
@@ -37,6 +39,7 @@ body::before {
     max-width: 150px;
 }
 
+/* ---------- BOXES ---------- */
 
 .black_box {
     background-color: black;
@@ -44,26 +47,32 @@ body::before {
     margin: 0%
 }
 
-
-.description {
+.description,
+.realisation_box {
     text-align: center;
     padding: 5%;
-    overflow: hidden; /* évite que le contenu dépasse */
+    overflow: hidden;
     text-decoration: none;
     height: 100%;
     border: 3px solid black;
     border-radius: 10%;
     font-size: 110%;
-    background-image: url('./../images/mars.jpg');
-    background-size: 100% 100%;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    line-height: 1.5;
+}
+
+.description {
+    background-image: url('./../images/mars.jpg');
+}
+
+.realisation_box {
+    background-image: url('./../images/espace.png');
 }
 
 .news_box {
     position: relative;
-    overflow: hidden; /* évite que l'image dépasse*/
+    overflow: hidden;
     color:black;
     text-decoration: none;
     z-index: 1;
@@ -74,7 +83,6 @@ body::before {
   transform: scale(1.02);
 }
 
-
 .news_box::before {
     content: "";
     position: absolute;
@@ -82,18 +90,18 @@ body::before {
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.6;      /* transparence de l'image */
+    opacity: 0.6;
     z-index: 0;
-    background-size: 100% 100%;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    background-color: rgba(255, 255, 255, 0.2); /* couche blanche semi-transparente */
-    background-blend-mode: lighten; /* ou overlay selon effet voulu */
+    background-color: rgba(255, 255, 255, 0.2);
+    background-blend-mode: lighten;
 }
 
 .news_box > * {
     position: relative;
-    z-index: 1; /* texte au-dessus */
+    z-index: 1;
 }
 
 .news_box1::before {
@@ -104,11 +112,13 @@ body::before {
     background-image: url('./../images/actu2.png');
 }
 
+/* ---------- PRODUCT GRID ---------- */
+
 .flex_product {
     display: flex;
     justify-content: center;
     gap: 10%;
-    flex-wrap:wrap;
+    flex-wrap: wrap;
 }
 
 .product_box {
@@ -116,6 +126,7 @@ body::before {
     border-radius: 10px;
     padding: 2%;
     width: 30%;
+    min-width: 250px;
     margin-bottom: 10%;
     background-color: black;
 }
@@ -124,8 +135,6 @@ body::before {
   box-shadow: 0 16px 60px rgba(0,0,0,0.25);
   transform: scale(1.02);
 }
-
-
 
 .product_background {
     overflow: hidden;
@@ -137,32 +146,15 @@ body::before {
     width: 50%;
 }
 
+/* ---------- RÉALISATIONS ---------- */
+
 .flex_realisation {
     display: flex;
     justify-content: center;
-    flex-direction: column
+    flex-direction: column;
 }
 
-.realisation_box {
-    text-align: center;
-    padding: 5%;
-    overflow: hidden; /* évite que le contenu dépasse */
-    text-decoration: none;
-    height: 100%;
-    border: 3px solid black;
-    border-radius: 10%;
-    font-size: 110%;
-    background-image: url('./../images/espace.png');
-    background-size: 100% 100%;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-/*actu*/
-
-.actu_first_title {
-    
-}
+/* ---------- ACTU ---------- */
 
 .actu_title {
     font-size: 130%;
@@ -184,24 +176,20 @@ body::before {
 
 .img_center {
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 2%;
-    margin-bottom: 2%;
+    margin: 2% auto;
 }
 
 .actu_video {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 2%;
     display: block;
     width: 100%;
     max-width: 800px;
+    margin: 2% auto;
     border-radius: 12px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
-/*CONTACT*/
+/* ---------- CONTACT ---------- */
+
 .contact-form {
     max-width: 600px;
     margin: auto;
@@ -216,10 +204,6 @@ form {
     gap: 1rem;
 }
 
-label {
-    font-weight: 600;
-}
-
 input[type="text"],
 select,
 textarea {
@@ -228,10 +212,6 @@ textarea {
     border: 1px solid #ccc;
     border-radius: 8px;
     font-size: 1rem;
-}
-
-:focus {
-    outline: none;
 }
 
 .checkbox {
@@ -259,6 +239,8 @@ button:hover {
     background: #5a5b5b;
 }
 
+/* ---------- HERO ---------- */
+
 .hero {
     background: #6e6e6e;
     color: #fff;
@@ -269,4 +251,64 @@ button:hover {
 .hero h2 {
     font-size: 2rem;
     margin-bottom: 15px;
+}
+
+/* -------------------------------------------- */
+/* ---------------- RESPONSIVE ---------------- */
+/* -------------------------------------------- */
+
+/* TABLETTES */
+@media (max-width: 1024px) {
+    .flex_banner {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .product_box {
+        width: 45%;
+    }
+
+    h3 {
+        font-size: 140%;
+    }
+
+    .hero h2 {
+        font-size: 1.7rem;
+    }
+}
+
+/* SMARTPHONES */
+@media (max-width: 600px) {
+
+    .flex_banner {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px 5%;
+    }
+
+    .logo {
+        width: 40%;
+    }
+
+    .product_box {
+        width: 90%;
+    }
+
+    .description,
+    .realisation_box {
+        font-size: 100%;
+        padding: 8%;
+    }
+
+    .actu_title {
+        font-size: 115%;
+    }
+
+    .hero {
+        padding: 40px 5%;
+    }
+
+    .hero h2 {
+        font-size: 1.4rem;
+    }
 }
