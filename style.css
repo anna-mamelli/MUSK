@@ -235,13 +235,13 @@ h3 {
 
     .flex_banner {
         flex-wrap: nowrap;      /* reste sur une seule ligne */
-        gap: 5px;               /* espace réduit */
+        gap: 10px;               /* espace réduit */
         justify-content: center;
         flex-direction: row;
     }
 
     .flex_banner * {
-        transform: scale(0.75); /* réduction de 25% */
+        transform: scale(0.90); 
         white-space: nowrap;    /* pas de retour à la ligne */
     }
 
@@ -275,7 +275,7 @@ h3 {
 
     .flex_banner {
         flex-wrap: nowrap;      /* reste sur une seule ligne */
-        gap: 5px;               /* espace réduit */
+        gap: 5px;
         justify-content: center;
         flex-direction: row;
     }
