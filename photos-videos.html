@@ -9,7 +9,7 @@
     <style>
     </style>
 </head>
-<body>
+
 <!-- HEADER -->
     <header>
         <!-- Banner -->
@@ -30,8 +30,9 @@
     </nav>
 </header>
 <br><br>
+<body>
     <!-- principal container -->
-    <div class="photo-grid">
+    <div class="photo-grid" aria-labelledby="photo-title">
     <!-- Images -->
     <div class="photo-item">
         <img src="./images/neuralink_pic1.jpg" alt="Photo 1">
@@ -62,26 +63,52 @@
     </div>
 
     <!-- YouTube videos -->
-    <div class="photo-item video-wrapper">
-        <a href="https://www.youtube.com/watch?v=YreDYmXTYi4" target="_blank" class="video-thumbnail">
-    <img src="https://img.youtube.com/vi/YreDYmXTYi4/hqdefault.jpg" 
-        alt="Neuralink Show and Tell, Fall 2022"
-        style="width:100%; max-width:560px; border-radius:8px; cursor:pointer;">
-</a>
+ <div class="photo-item video-wrapper">
+        <a href="https://www.youtube.com/watch?v=YreDYmXTYi4" target="_blank" rel="noopener noreferrer" class="video-thumbnail">
+            <img src="https://img.youtube.com/vi/YreDYmXTYi4/hqdefault.jpg" 
+                 alt="Neuralink Show and Tell, Fall 2022" 
+                 style="width:100%; max-width:560px; border-radius:8px; cursor:pointer;">
+        </a>
     </div>
-
     <div class="photo-item video-wrapper">
-    <a href="https://www.youtube.com/watch?v=FASMejN_5gs" target="_blank" class="video-thumbnail">
-    <img src="https://img.youtube.com/vi/FASMejN_5gs/hqdefault.jpg" alt="Neuralink Update, Summer 2025"
-    style="width:100%; max-width:560px; border-radius:8px; cursor:pointer;">
-</a>
+        <a href="https://www.youtube.com/watch?v=FASMejN_5gs" target="_blank" rel="noopener noreferrer" class="video-thumbnail">
+            <img src="https://img.youtube.com/vi/FASMejN_5gs/hqdefault.jpg" 
+                 alt="Neuralink Update, Summer 2025" 
+                 style="width:100%; max-width:560px; border-radius:8px; cursor:pointer;">
+        </a>
+    </div>
+    <div class="photo-item video-wrapper">
+        <a href="https://www.youtube.com/watch?v=Ux5AiKmra-E" target="_blank" rel="noopener noreferrer" class="video-thumbnail">
+            <img src="https://img.youtube.com/vi/Ux5AiKmra-E/hqdefault.jpg" 
+                 alt="Neuralink Live Update - July 2024" 
+                 style="width:100%; max-width:560px; border-radius:8px; cursor:pointer;">
+        </a>
+    </div>
 </div>
-
-<div class="photo-item video-wrapper">
-    <a href="https://www.youtube.com/watch?v=Ux5AiKmra-E" target="_blank" class="video-thumbnail">
-    <img src="https://img.youtube.com/vi/Ux5AiKmra-E/hqdefault.jpg" 
-        alt="Neuralink Live Update - July 2024" 
-        style="width:100%; max-width:560px; border-radius:8px; cursor:pointer;">
-</a>
-</div>
-
+</body>
+<!-- FOOTER -->
+<footer role="contentinfo">
+    <nav class="flex_footer" aria-label="Liens du pied de page">
+        <div class="flex_link">
+            <h4><a href="index.html">Page d'accueil</a></h4>
+        </div>
+        <div class="flex_link">
+            <h4><a href="fansite3.html">Actualités</a></h4>
+            <a href="medias.html">Médias</a>
+            <a href="photos-videos.html">Photos-vidéos</a>
+        </div>
+        <div class="flex_link">
+            <h4><a href="carriere.html">Carrière</a></h4>
+        </div>
+        <div class="flex_link">
+            <h4><a href="contact.html">Contact</a></h4>
+            <a href="mailto:neuralink@neuralink.com">Mail</a>
+            <a href="https://www.instagram.com/neura.link/">Instagram</a>
+            <a href="https://x.com/neuralink">X</a>
+            <a href="https://www.youtube.com/@neuralink">YouTube</a>
+        </div>   
+    </nav>
+    <p class="txt_right">© L'Empire d'Elon Musk 2025</p>
+</footer>
+</body>
+</html>

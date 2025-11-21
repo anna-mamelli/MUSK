@@ -10,16 +10,17 @@
 <body>
 
 <!-- HEADER -->
-    <header>
-        <!-- Banner -->
-        <h1 class="txt_orbitron">L'Empire d'Elon Musk</h1>
-        <nav class="flex_banner txt_bold">
-            <a class="txt_white" href="index.html"><img src="./images/accueil.png" height="15" title="Accueil" alt="Accueil"></a>
-            <a class="txt_white" href="fansite1/fansite1.html"><img src="./images/logo_tesla.jpg" height="15" title="Tesla" alt="TESLA"></a>
-            <a class="txt_white" href="fansite2/fansite2.html"><img class="logo_banner" src="./images/logo_spacex.jpg" height="25" title="SpaceX" alt="SPACEX"></a>
-            <a class="txt_white" href="fansite3/fansite3.html"><img class="logo_banner" src="./images/logo_neuralink.jpg" height="50" title="NeuraLink" alt="NEURALINK"></a>
-        </nav>
-    <nav class="flex_banner">
+<header role="banner">
+    <h1 class="txt_orbitron">L'Empire d'Elon Musk</h1>
+
+    <nav class="flex_banner txt_bold" role="navigation" aria-label="Navigation principale logos">
+        <a class="txt_white" href="index.html"><img src="./images/accueil.png" height="15" title="Accueil" alt="Accueil"></a>
+        <a class="txt_white" href="fansite1/fansite1.html"><img src="./images/logo_tesla.jpg" height="15" title="Tesla" alt="TESLA"></a>
+        <a class="txt_white" href="fansite2/fansite2.html"><img class="logo_banner" src="./images/logo_spacex.jpg" height="25" title="SpaceX" alt="SPACEX"></a>
+        <a class="txt_white" href="fansite3/fansite3.html"><img class="logo_banner" src="./images/logo_neuralink.jpg" height="50" title="NeuraLink" alt="NEURALINK"></a>
+    </nav>
+
+    <nav class="flex_banner" role="navigation" aria-label="Navigation principale texte">
         <div class="logo">
             <img src="./images/logo_neuralink.jpg" title="Neuralink banner" alt="Neuralink banner">
         </div>
@@ -29,8 +30,7 @@
     </nav>
 </header>
 <br><br>
-
-<main>
+<main role="main">
     <p class="txt_roboto txt_center txt_presentation">
         <a href="https://neuralink.com/">Neuralink</a> est une entreprise de neurotechnologie très innovante qui développe des interfaces cerveau-ordinateur (BCI) implantables. 
         Son objectif est de restaurer l'autonomie des personnes souffrant de paralysie ou de troubles neurologiques, en leur permettant de communiquer ou contrôler des appareils par la pensée. 
@@ -44,23 +44,21 @@
     </p>
 </main>
 
-    <aside>
-        <div class="border_radius txt_bold add_size media-wrapper">
-            <a class="border_radius txt_bold add_size medias txt_bold" href="medias.html">
-                <h3 class="txt_opac media-title">Médias</h3>
-                <p class="txt_opac txt_white">Cliquez ici pour voir les articles de presse de notre marque NeuraLink.
-                </p>
-            </a>
+<aside role="complementary" aria-label="Liens médias et photos/vidéos">
+    <div class="border_radius txt_bold add_size media-wrapper">
+        <a class="border_radius txt_bold add_size medias txt_bold" href="medias.html">
+            <h3 class="txt_opac media-title">Médias</h3>
+            <p class="txt_opac txt_white">Cliquez ici pour voir les articles de presse de notre marque Neuralink.</p>
+        </a>
 
-            <a class="border_radius txt_bold add_size photos-videos txt_bold" href="photos-videos.html">
-                <h3 class="txt_opac media-title">Photos/vidéos</h3>
-                <p class="txt_opac txt_white">
-                    Cliquez ici pour voir les photos et vidéos de notre marque NeuraLink.
-                </p>
-
-            </a>
-        </div>
-    </aside>
+        <a class="border_radius txt_bold add_size photos-videos txt_bold" href="photos-videos.html">
+            <h3 class="txt_opac media-title">Photos/vidéos</h3>
+            <p class="txt_opac txt_white">
+                Cliquez ici pour voir les photos et vidéos de notre marque Neuralink.
+            </p>
+        </a>
+    </div>
+</aside>
 
 <!-- Tchat -->
 <input type="checkbox" id="chat-toggle" class="chat-toggle" aria-controls="chat-box" aria-expanded="false">
@@ -75,16 +73,16 @@
         <p><strong>Bot :</strong> Bonjour ! Posez votre question et un conseiller va vous répondre.</p>
         <p><strong>Vous :</strong></p>
     </div>
-        <form class="chat-input">
-            <input id="chat-message" type="text" placeholder="Message…" name="message" autocomplete="off">
-            <button type="submit">Envoyer</button>
-        </form>
-    </div>
 
+    <form class="chat-input">
+        <input id="chat-message" type="text" placeholder="Message…" name="message" autocomplete="off">
+        <button type="submit">Envoyer</button>
+    </form>
+</div>
 
 <!-- FOOTER -->
-<footer>
-    <nav class="flex_footer">
+<footer role="contentinfo">
+    <nav class="flex_footer" aria-label="Liens du pied de page">
         <div class="flex_link">
             <h4><a href="index.html">Page d'accueil</a></h4>
         </div>
@@ -104,7 +102,7 @@
             <a href="https://www.youtube.com/@neuralink">YouTube</a>
         </div>   
     </nav>
-    <p class="txt_right">© Neuralink 2025</p>
+    <p class="txt_right">© L'Empire d'Elon Musk 2025</p>
 </footer>
 
 </body>
