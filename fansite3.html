@@ -62,23 +62,25 @@
         </div>
     </aside>
 
-<!-- TCHAT -->
-<input type="checkbox" id="chat-toggle" class="chat-toggle">
+<!-- Tchat -->
+<input type="checkbox" id="chat-toggle" class="chat-toggle" aria-controls="chat-box" aria-expanded="false">
 
-<label for="chat-toggle" class="chat-button">💬</label>
+<label for="chat-toggle" class="chat-button" role="button" aria-label="Ouvrir ou fermer le tchat">💬</label>
 
-<div class="chat-box">
-    <div class="chat-header">Tchat</div>
-    <div class="chat-content">
+<div class="chat-box" id="chat-box" role="dialog" aria-labelledby="chat-header" aria-hidden="true">
+
+    <div class="chat-header" id="chat-header">Tchat</div>
+
+    <div class="chat-content" role="log" aria-live="polite">
         <p><strong>Bot :</strong> Bonjour ! Posez votre question et un conseiller va vous répondre.</p>
         <p><strong>Vous :</strong></p>
     </div>
+        <form class="chat-input">
+            <input id="chat-message" type="text" placeholder="Message…" name="message" autocomplete="off">
+            <button type="submit">Envoyer</button>
+        </form>
+    </div>
 
-    <form class="chat-input">
-        <input type="text" placeholder="Message…" name="message">
-        <button type="submit">Envoyer</button>
-    </form>
-</div>
 
 <!-- FOOTER -->
 <footer>
