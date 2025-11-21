@@ -10,94 +10,94 @@
 <body>
 
 <!-- HEADER -->
-    <header>
-        <!-- Banner -->
-        <h1 class="txt_orbitron">L'Empire d'Elon Musk</h1>
-        <nav class="flex_banner txt_bold">
-            <a class="txt_white" href="./../index.html"><img src="./../images/accueil.png" height="15" title="Accueil" alt="Accueil"></a>
-            <a class="txt_white" href="./../fansite1/fansite1.html"><img src="./../images/logo_tesla.jpg" height="15" title="Tesla" alt="TESLA"></a>
-            <a class="txt_white" href="./../fansite2/fansite2.html"><img class="logo_banner" src="./../images/logo_spacex.jpg" height="25" title="SpaceX" alt="SPACEX"></a>
-            <a class="txt_white" href="./../fansite3/fansite3.html"><img class="logo_banner" src="./../images/logo_neuralink.jpg" height="50" title="NeuraLink" alt="NEURALINK"></a>
-        </nav>
-    <nav class="flex_banner">
+<header role="banner">
+    <h1 class="txt_orbitron">L'Empire d'Elon Musk</h1>
+
+    <!-- Navigation principale -->
+    <nav class="flex_banner txt_bold" role="navigation" aria-label="Navigation principale">
+        <a class="txt_white" href="./../index.html"><img src="./../images/accueil.png" height="15" alt="Accueil"></a>
+        <a class="txt_white" href="./../fansite1/fansite1.html"><img src="./../images/logo_tesla.jpg" height="15" alt="Tesla"></a>
+        <a class="txt_white" href="./../fansite2/fansite2.html"><img src="./../images/logo_spacex.jpg" height="25" alt="SpaceX"></a>
+        <a class="txt_white" href="./../fansite3/fansite3.html" aria-current="page"><img src="./../images/logo_neuralink.jpg" height="50" alt="NeuraLink"></a>
+    </nav>
+
+    <!-- Navigation secondaire -->
+    <nav class="flex_banner" role="navigation" aria-label="Navigation secondaire">
         <div class="logo">
-            <img src="./images/logo_neuralink.jpg" title="Neuralink banner" alt="Neuralink banner">
+            <img src="./images/logo_neuralink.jpg" alt="Bannière NeuraLink">
         </div>
         <a class="txt_white" href="fansite3.html">Actualités</a>
         <a class="txt_white" href="carriere.html">Carrière</a>
-        <a class="txt_white" href="contact.html">Contact</a>
+        <a class="txt_white" href="contact.html" aria-current="page">Contact</a>
     </nav>
 </header>
+
 <br><br>
 
-<main>
-    <p class="txt_roboto txt_center txt_presentation">
-        <a href="https://neuralink.com/">Neuralink</a> est une entreprise de neurotechnologie très innovante qui développe des interfaces cerveau-ordinateur (BCI) implantables. 
-        Son objectif est de restaurer l'autonomie des personnes souffrant de paralysie ou de troubles neurologiques, en leur permettant de communiquer ou contrôler des appareils par la pensée. 
-        Elle conçoit un implant de petite taille (presque comme une pièce), extrêmement fin et précis, capable de lire l'activité neuronale via des milliers d'électrodes. 
-        Neuralink utilise un robot chirurgical pour implanter les fils dans le cerveau avec une très grande précision. 
-        L'entreprise a déjà commencé des essais humains : quelques personnes sont implantées et utilisent l'interface pour contrôler des appareils, ce qui montre des progrès concrets. 
-        Elle attire des talents multidisciplinaires (neuroscientifiques, ingénieurs, roboticiens), ce qui renforce son potentiel d'innovation. 
-        À long terme, son ambition va bien au-delà du médical : elle vise à créer une connexion plus profonde entre le cerveau humain et la technologie, ouvrant de nouvelles possibilités pour l'interaction homme-machine.
-        <br>
-        <b>En résumé : <a href="https://neuralink.com/">Neuralink</a> est à la pointe de la technologie cérébrale, et son travail pourrait transformer la vie des personnes ayant des handicaps neurologiques tout en repoussant les limites de ce qu'on peut faire avec le cerveau et les machines.</b>
-    </p>
-</main>
+<!-- MAIN -->
+<main role="main">
+    <section role="region" aria-labelledby="neuralink-info">
+        <p id="neuralink-info" class="txt_roboto txt_center txt_presentation">
+            <a href="https://neuralink.com/">Neuralink</a> est une entreprise de neurotechnologie innovante qui développe des interfaces cerveau-ordinateur (BCI) implantables. 
+            Son objectif est de restaurer l'autonomie des personnes souffrant de paralysie ou de troubles neurologiques. 
+            Elle conçoit un implant très fin, capable de lire l'activité neuronale via des milliers d'électrodes et utilise un robot chirurgical pour l'implanter. 
+            Neuralink a commencé des essais humains et attire des talents multidisciplinaires. 
+            <br>
+            <b>En résumé : <a href="https://neuralink.com/">Neuralink</a> est à la pointe de la technologie cérébrale et pourrait transformer la vie des personnes ayant des handicaps neurologiques.</b>
+        </p>
+    </section>
 
-    <aside>
+    <aside role="complementary" aria-labelledby="media-title-group">
         <div class="border_radius txt_bold add_size media-wrapper">
             <a class="border_radius txt_bold add_size medias txt_bold" href="medias.html">
-                <h3 class="txt_opac media-title">Médias</h3>
-                <p class="txt_opac txt_white">Cliquez ici pour voir les articles de presse de notre marque NeuraLink.
-                </p>
+                <h3 id="media-title-group" class="txt_opac media-title">Médias</h3>
+                <p class="txt_opac txt_white">Cliquez ici pour voir les articles de presse de notre marque NeuraLink.</p>
             </a>
 
             <a class="border_radius txt_bold add_size photos-videos txt_bold" href="photos-videos.html">
                 <h3 class="txt_opac media-title">Photos/vidéos</h3>
-                <p class="txt_opac txt_white">
-                    Cliquez ici pour voir les photos et vidéos de notre marque NeuraLink.
-                </p>
-
+                <p class="txt_opac txt_white">Cliquez ici pour voir les photos et vidéos de notre marque NeuraLink.</p>
             </a>
         </div>
     </aside>
 
-<!-- Tchat -->
-<input type="checkbox" id="chat-toggle" class="chat-toggle" aria-controls="chat-box" aria-expanded="false">
+    <!-- Tchat -->
+    <input type="checkbox" id="chat-toggle" class="chat-toggle" aria-controls="chat-box" aria-expanded="false">
 
-<label for="chat-toggle" class="chat-button" role="button" aria-label="Ouvrir ou fermer le tchat">💬</label>
+    <label for="chat-toggle" class="chat-button" role="button" aria-label="Ouvrir ou fermer le tchat">💬</label>
 
-<div class="chat-box" id="chat-box" role="dialog" aria-labelledby="chat-header" aria-hidden="true">
+    <div class="chat-box" id="chat-box" role="dialog" aria-labelledby="chat-header" aria-hidden="true">
+        <div class="chat-header" id="chat-header">Tchat</div>
 
-    <div class="chat-header" id="chat-header">Tchat</div>
+        <div class="chat-content" role="log" aria-live="polite">
+            <p><strong>Bot :</strong> Bonjour ! Posez votre question et un conseiller va vous répondre.</p>
+            <p><strong>Vous :</strong></p>
+        </div>
 
-    <div class="chat-content" role="log" aria-live="polite">
-        <p><strong>Bot :</strong> Bonjour ! Posez votre question et un conseiller va vous répondre.</p>
-        <p><strong>Vous :</strong></p>
-    </div>
         <form class="chat-input">
+            <label for="chat-message" class="visually-hidden">Message pour le chat</label>
             <input id="chat-message" type="text" placeholder="Message…" name="message" autocomplete="off">
             <button type="submit">Envoyer</button>
         </form>
     </div>
-
+</main>
 
 <!-- FOOTER -->
-<footer>
-    <nav class="flex_footer">
-        <div class="flex_link">
-            <h4><a href="index.html">Page d'accueil</a></h4>
+<footer role="contentinfo">
+    <nav class="flex_footer" role="navigation" aria-label="Navigation pied de page">
+        <div class="flex_link" role="region" aria-labelledby="footer-home">
+            <h4 id="footer-home"><a href="index.html">Page d'accueil</a></h4>
         </div>
-        <div class="flex_link">
-            <h4><a href="fansite3.html">Actualités</a></h4>
+        <div class="flex_link" role="region" aria-labelledby="footer-news">
+            <h4 id="footer-news"><a href="fansite3.html">Actualités</a></h4>
             <a href="medias.html">Médias</a>
             <a href="photos-videos.html">Photos-vidéos</a>
         </div>
-        <div class="flex_link">
-            <h4><a href="carriere.html">Carrière</a></h4>
+        <div class="flex_link" role="region" aria-labelledby="footer-career">
+            <h4 id="footer-career"><a href="carriere.html">Carrière</a></h4>
         </div>
-        <div class="flex_link">
-            <h4><a href="contact.html">Contact</a></h4>
+        <div class="flex_link" role="region" aria-labelledby="footer-contact">
+            <h4 id="footer-contact"><a href="contact.html">Contact</a></h4>
             <a href="mailto:neuralink@neuralink.com">Mail</a>
             <a href="https://www.instagram.com/neura.link/">Instagram</a>
             <a href="https://x.com/neuralink">X</a>

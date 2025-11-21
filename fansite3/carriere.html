@@ -10,101 +10,125 @@
 <body>
 
 <!-- HEADER -->
-    <header>
-        <!-- Banner -->
-        <h1 class="txt_orbitron">L'Empire d'Elon Musk</h1>
-        <nav class="flex_banner txt_bold">
-            <a class="txt_white" href="./../index.html"><img src="./../images/accueil.png" height="15" title="Accueil" alt="Accueil"></a>
-            <a class="txt_white" href="./../fansite1/fansite1.html"><img src="./../images/logo_tesla.jpg" height="15" title="Tesla" alt="TESLA"></a>
-            <a class="txt_white" href="./../fansite2/fansite2.html"><img class="logo_banner" src="./../images/logo_spacex.jpg" height="25" title="SpaceX" alt="SPACEX"></a>
-            <a class="txt_white" href="./../fansite3/fansite3.html"><img class="logo_banner" src="./../images/logo_neuralink.jpg" height="50" title="NeuraLink" alt="NEURALINK"></a>
-        </nav>
-    <nav class="flex_banner">
+<header role="banner">
+    <h1 class="txt_orbitron">L'Empire d'Elon Musk</h1>
+
+    <!-- Navigation principale -->
+    <nav class="flex_banner txt_bold" role="navigation" aria-label="Navigation principale">
+        <a class="txt_white" href="./../index.html">
+            <img src="./../images/accueil.png" height="15" alt="Lien vers la page d'accueil">
+        </a>
+        <a class="txt_white" href="./../fansite1/fansite1.html">
+            <img src="./../images/logo_tesla.jpg" height="15" alt="Lien vers Tesla">
+        </a>
+        <a class="txt_white" href="./../fansite2/fansite2.html">
+            <img class="logo_banner" src="./../images/logo_spacex.jpg" height="25" alt="Lien vers SpaceX">
+        </a>
+        <a class="txt_white" href="./../fansite3/fansite3.html" aria-current="page">
+            <img class="logo_banner" src="./../images/logo_neuralink.jpg" height="50" alt="Lien vers NeuraLink">
+        </a>
+    </nav>
+
+    <!-- Navigation secondaire -->
+    <nav class="flex_banner" role="navigation" aria-label="Navigation Carrière">
         <div class="logo">
-            <img src="./images/logo_neuralink.jpg" title="Neuralink banner" alt="Neuralink banner">
+            <img src="./images/logo_neuralink.jpg" alt="Bannière NeuraLink">
         </div>
         <a class="txt_white" href="fansite3.html">Actualités</a>
-        <a class="txt_white" href="carriere.html">Carrière</a>
+        <a class="txt_white" href="carriere.html" aria-current="page">Carrière</a>
         <a class="txt_white" href="contact.html">Contact</a>
     </nav>
 </header>
+
 <br><br>
-<!-- Principal section -->
-<main>
-    <section class="hero">
-        <h2>Rejoignez notre équipe</h2>
+
+<!-- MAIN -->
+<main role="main">
+
+    <!-- Hero section -->
+    <section class="hero" role="region" aria-labelledby="hero-title">
+        <h2 id="hero-title">Rejoignez notre équipe</h2>
         <p>Découvrez nos offres d'emploi et les opportunités de carrière au sein de NeuraLink.</p>
         <a href="#offer" class="btn">Voir les offres</a>
     </section>
 
-    <section class="offer" id="offer">
-        <h2 class="txt_white">Offres d'emploi</h2>
-        <article class="job-card">
+    <!-- Offres d'emploi -->
+    <section class="offer" id="offer" role="region" aria-labelledby="offer-title">
+        <h2 id="offer-title" class="txt_white">Offres d'emploi</h2>
+
+        <article class="job-card" role="article" aria-labelledby="job1-title">
             <header>
-                <h3>Développeur Front-end</h3>
+                <h3 id="job1-title">Développeur Front-end</h3>
                 <p class="location">Paris, France</p>
             </header>
             <p>Vous êtes passionné par le développement web et souhaitez rejoindre une équipe dynamique ?</p>
             <footer>
-                <a href="mailto:recrutement@neuralink.com?subject=Candidature Développeur Front-end" class="btn-small">Postuler</a>
+                <a href="mailto:recrutement@neuralink.com?subject=Candidature Développeur Front-end" class="btn-small" aria-label="Postuler au poste de Développeur Front-end">Postuler</a>
             </footer>
         </article>
 
-        <article class="job-card">
+        <article class="job-card" role="article" aria-labelledby="job2-title">
             <header>
-                <h3>Chef de projet</h3>
+                <h3 id="job2-title">Chef de projet</h3>
                 <p class="location">Lyon, France</p>
             </header>
             <p>Gérez des projets ambitieux et collaborez avec des équipes multidisciplinaires.</p>
             <footer>
-                <a href="mailto:recrutement@neuralink.com?subject=Candidature Chef de projet" class="btn-small">Postuler</a>
+                <a href="mailto:recrutement@neuralink.com?subject=Candidature Chef de projet" class="btn-small" aria-label="Postuler au poste de Chef de projet">Postuler</a>
             </footer>
         </article>
 
-        <article class="job-card">
+        <article class="job-card" role="article" aria-labelledby="job3-title">
             <header>
-                <h3>Designer UX/UI</h3>
+                <h3 id="job3-title">Designer UX/UI</h3>
                 <p class="location">Télétravail</p>
             </header>
             <p>Créez des expériences utilisateurs intuitives et modernes pour nos produits numériques.</p>
             <footer>
-                <a href="mailto:recrutement@neuralink.com?subject=Candidature Designer UX/UI" class="btn-small">Postuler</a>
+                <a href="mailto:recrutement@neuralink.com?subject=Candidature Designer UX/UI" class="btn-small" aria-label="Postuler au poste de Designer UX/UI">Postuler</a>
             </footer>
         </article>
+
     </section>
 
-    <aside class="carrer-info">
-        <h2>Pourquoi nous rejoindre ?</h2>
+    <!-- Aside / Infos carrière -->
+    <aside class="carrer-info" role="complementary" aria-labelledby="career-info-title">
+        <h2 id="career-info-title">Pourquoi nous rejoindre ?</h2>
         <ul>
             <li>Équipe passionnée et collaborative</li>
             <li>Projets innovants</li>
             <li>Formation et évolution professionnelle</li>
         </ul>
     </aside>
+
 </main>
 
 <!-- FOOTER -->
-<footer>
-    <nav class="flex_footer">
-        <div class="flex_link">
-            <h4><a href="index.html">Page d'accueil</a></h4>
+<footer role="contentinfo">
+    <nav class="flex_footer" role="navigation" aria-label="Navigation du pied de page">
+        <div class="flex_link" role="region" aria-labelledby="footer-home">
+            <h4 id="footer-home"><a href="index.html">Page d'accueil</a></h4>
         </div>
-        <div class="flex_link">
-            <h4><a href="fansite3.html">Actualités</a></h4>
+
+        <div class="flex_link" role="region" aria-labelledby="footer-news">
+            <h4 id="footer-news"><a href="fansite3.html">Actualités</a></h4>
             <a href="medias.html">Médias</a>
             <a href="photos-videos.html">Photos-vidéos</a>
         </div>
-        <div class="flex_link">
-            <h4><a href="carriere.html">Carrière</a></h4>
+
+        <div class="flex_link" role="region" aria-labelledby="footer-career">
+            <h4 id="footer-career"><a href="carriere.html">Carrière</a></h4>
         </div>
-        <div class="flex_link">
-            <h4><a href="contact.html">Contact</a></h4>
+
+        <div class="flex_link" role="region" aria-labelledby="footer-contact">
+            <h4 id="footer-contact"><a href="contact.html">Contact</a></h4>
             <a href="mailto:neuralink@neuralink.com">Mail</a>
             <a href="https://www.instagram.com/neura.link/">Instagram</a>
             <a href="https://x.com/neuralink">X</a>
             <a href="https://www.youtube.com/@neuralink">YouTube</a>
         </div>   
     </nav>
+
     <p class="txt_right">© L'Empire d'Elon Musk 2025</p>
 </footer>
 
