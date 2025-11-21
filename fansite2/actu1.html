@@ -7,22 +7,36 @@
     <link rel="stylesheet" href="./../style.css">
     <title>Actualités</title>
 </head>
+
 <body>
     <!-- Banner -->
-    <header>
+    <header role="banner">
         <!--<img class="logo" src="./../images/logo_spacex.jpg" title="SpaceX" alt="SpaceX">-->
         <h1 class="txt_orbitron">L'Empire d'Elon Musk</h1>
-        <nav class="flex_banner txt_bold">
-            <a class="txt_white" href="./../index.html"><img src="./../images/accueil.png" height="15" title="Accueil" alt="Accueil"></a>
-            <a class="txt_white" href="./../fansite1/fansite1.html"><img src="./../images/logo_tesla.jpg" height="15" title="Tesla" alt="TESLA"></a>
-            <a class="txt_white" href="./../fansite2/fansite2.html"><img class="logo_banner" src="./../images/logo_spacex.jpg" height="25" title="SpaceX" alt="SPACEX"></a>
-            <a class="txt_white" href="./../fansite3/fansite3.html"><img class="logo_banner" src="./../images/logo_neuralink.jpg" height="50" title="NeuraLink" alt="NEURALINK"></a>
+
+        <!-- Main Navigation -->
+        <nav class="flex_banner txt_bold" role="navigation" aria-label="Navigation principale">
+            <a class="txt_white" href="./../index.html">
+                <img src="./../images/accueil.png" height="15" title="Accueil" alt="Lien vers la page d'accueil">
+            </a>
+
+            <a class="txt_white" href="./../fansite1/fansite1.html">
+                <img src="./../images/logo_tesla.jpg" height="15" title="Tesla" alt="Lien vers Tesla">
+            </a>
+
+            <a class="txt_white" href="./../fansite2/fansite2.html">
+                <img class="logo_banner" src="./../images/logo_spacex.jpg" height="25" title="SpaceX" alt="Lien vers SpaceX">
+            </a>
+
+            <a class="txt_white" href="./../fansite3/fansite3.html">
+                <img class="logo_banner" src="./../images/logo_neuralink.jpg" height="50" title="NeuraLink" alt="Lien vers NeuraLink">
+            </a>
         </nav>
 
         <!-- Sub Banner -->
-        <nav class="flex_banner">
+        <nav class="flex_banner" role="navigation" aria-label="Navigation secondaire de la page SpaceX">
             <div class="logo">
-                <img src="./../images/logo_spacex.jpg" title="spacex" alt="SPACEX">
+                <img src="./../images/logo_spacex.jpg" title="spacex" alt="Logo SpaceX">
             </div>
             <a class="txt_white txt_roboto" href="fansite2.html#section1">Actualités</a>
             <a class="txt_white txt_roboto" href="fansite2.html#section2">Réalisations</a>
@@ -30,52 +44,58 @@
         </nav>
         
     </header>
-    <main>
+
+    <main role="main">
         <!-- Title -->
         <h1 class="txt_roboto margin_top">Actualités</h1>
         <h2 class="txt_roboto txt_center txt_white">Les images du nouveau vol test réussi de la plus grande fusée jamais construite par Elon Musk</h2>
 
         <!-- Video -->
-        <video class="actu_video" src="./../video/actu1.mp4" controls></video>
+        <video 
+            class="actu_video" 
+            src="./../video/actu1.mp4" 
+            controls 
+            aria-label="Vidéo du dernier vol test de la fusée Starship par SpaceX">
+        </video>
 
-        <!-- Article -->
-        <div class="actu_box">    
-            <h3 class="actu_title txt_roboto">Une   prouesse visuelle au décollage</h3>
+        <!-- Article Section 1 -->
+        <div class="actu_box" role="region" aria-labelledby="titre1">
+            <h3 id="titre1" class="actu_title txt_roboto">Une prouesse visuelle au décollage</h3>
             <p class="txt_roboto actu_p">
-                Les images du tout dernier vol test de la fusée Starship, la plus grande jamais construite par SpaceX, sont tout simplement saisissantes. Lors du décollage, le lanceur de plus de 120 m s'élance verticalement depuis la base Starbase, au Texas, entouré d'un nuage de fumée dense. Les flammes orangées jaillissent alors des 33 moteurs Raptor du booster Super Heavy, générant un spectacle puissant et impressionnant.
+                Les images du tout dernier vol test de la fusée Starship, la plus grande jamais construite par SpaceX, sont tout simplement saisissantes...
             </p>
-            <img class="img_center" src="./../images/actu1_decolage.jpg" style=width:35% title="Decolage" alt="Decolage">
+            <img class="img_actu" src="./../images/actu1_decolage.jpg" title="Decolage" alt="Image du décollage de Starship">
         </div>
 
-        <div class="actu_box">
-            <h3 class="actu_title txt_roboto">Une rentrée atmosphérique enveloppée de plasma</h3>
+        <!-- Article Section 2 -->
+        <div class="actu_box" role="region" aria-labelledby="titre2">
+            <h3 id="titre2" class="actu_title txt_roboto">Une rentrée atmosphérique enveloppée de plasma</h3>
             <p class="txt_roboto actu_p">
-                L'un des moments les plus marquants des images est celui de la rentrée du vaisseau supérieur : alors que Starship redescend vers la Terre, les caméras embarquées montrent des teintes rouges et orangées — un effet de plasma se formant autour de la fusée à cause de la chaleur intense de la friction atmosphérique. 
-                Ce phénomène, bien que dramatique visuellement, témoigne d'un retour partiellement maîtrisé.
+                L'un des moments les plus marquants des images est celui de la rentrée du vaisseau supérieur...
             </p>
         </div>
         
-        <div class="actu_box">
-            <h3 class="actu_title txt_roboto">Un atterrissage / retour maîtrisé</h3>
+        <!-- Article Section 3 -->
+        <div class="actu_box" role="region" aria-labelledby="titre3">
+            <h3 id="titre3" class="actu_title txt_roboto">Un atterrissage / retour maîtrisé</h3>
             <p class="txt_roboto actu_p">
-                L'une des réussites techniques les plus impressionnantes, immortalisée en images, est le rattrapage du booster Super Heavy par des bras mécaniques fixés à la tour de lancement, souvent baptisés "chopsticks" — ou "Mechazilla" dans le jargon de SpaceX. Ce type de manœuvre, qui semblait relever de la science-fiction, a été capturé dans un moment de calme, presque solennel, quand le booster revient pour être "attrapé" à quelques centaines de mètres de sa plateforme de lancement.
+                L'une des réussites techniques les plus impressionnantes, immortalisée en images...
             </p>
         </div>
-        
-        <div class="actu_box">
-            <h3 class="actu_title txt_roboto">Une mission en deux temps : ascension et splash-down</h3>
+
+        <!-- Article Section 4 -->
+        <div class="actu_box" role="region" aria-labelledby="titre4">
+            <h3 id="titre4" class="actu_title txt_roboto">Une mission en deux temps : ascension et splash-down</h3>
             <p class="txt_roboto actu_p">
-                Les images montrent aussi bien l'ascension que la séparation des deux étages de la fusée : une fois le booster décroché, la partie Starship continue vers la haute altitude tandis que le Super Heavy commence sa manœuvre de retour. 
-                Le vaisseau supérieur, quant à lui, termine sa trajectoire en amerrissant dans l'océan Indien, comme prévu, confirmant ainsi un vol partiellement "réussi" selon SpaceX.
+                Les images montrent aussi bien l'ascension que la séparation des deux étages...
             </p>
         </div>
-        
-        <div class="actu_box">
-            <h3 class="actu_title txt_roboto">Réaction de SpaceX et portée médiatique</h3>
+
+        <!-- Article Section 5 -->
+        <div class="actu_box" role="region" aria-labelledby="titre5">
+            <h3 id="titre5" class="actu_title txt_roboto">Réaction de SpaceX et portée médiatique</h3>
             <p class="txt_roboto actu_p">
-                Malgré certains dommages subis pendant la rentrée, SpaceX a salué ce vol comme un véritable pas en avant. 
-                Les images diffusées en direct par la société ont été suivies par un large public, soulignant non seulement la prouesse technique, mais aussi la dimension spectaculaire et presque cinématographique de cette mission — un mélange d'ingénierie de pointe et d'ambition visionnaire. 
-                Elon Musk et son équipe semblent avoir gagné une nouvelle manche dans leur course vers la réutilisabilité totale, et les images de ce test offrent un aperçu tangible de leur progression vers des missions de plus grande envergure, notamment vers la Lune ou Mars.
+                Malgré certains dommages subis pendant la rentrée, SpaceX a salué ce vol comme un véritable pas en avant...
             </p>
         </div>
         
@@ -83,26 +103,31 @@
 </body>
 
 <!-- FOOTER -->
-<footer>
-    <nav class="flex_footer">
-        <div class="flex_link">
-            <h4><a href="index.html">Page d'accueil</a></h4>
+<footer role="contentinfo">
+    <nav class="flex_footer" role="navigation" aria-label="Navigation du pied de page">
+        <a href="./../index.html">Page d'accueil</a>
+
+        <div class="flex_link" role="region" aria-labelledby="entreprises">
+            <h4 id="entreprises">Entreprises</h4>
+            <a href="./../fansite1/fansite1.html">Tesla</a>
+            <a href="./../fansite2/fansite2.html">SpaceX</a>
+            <a href="./../fansite3/fansite3.html">NeuraLink</a>
         </div>
-        <div class="flex_link">
-            <a href="./fansite2.html#section1">Actualités</a>
-            <a href="./fansite2.html#section2">Réalisations</a>
+
+        <div class="flex_link" role="region" aria-labelledby="spacex_footer">
+            <h4 id="spacex_footer">SpaceX</h4>
+            <a href="#section1">Actualités</a>
+            <a href="#section2">Réalisation</a>
         </div>
-        <div class="flex_link">
-            <h4><a href="carriere.html">Carrière</a></h4>
+
+        <div class="flex_link" role="region" aria-labelledby="contact_footer">
+            <h4 id="contact_footer">Contact</h4>
+            <a href="mailto:Elon.Musk@spacex.com">Mail</a>
+            <a href="https://x.com/elonmusk">X</a>
         </div>
-        <div class="flex_link">
-            <h4><a href="contact.html">Contact</a></h4>
-            <a href="mailto:neuralink@neuralink.com">Mail</a>
-            <a href="https://www.instagram.com/neura.link/">Instagram</a>
-            <a href="https://x.com/neuralink">X</a>
-            <a href="https://www.youtube.com/@neuralink">YouTube</a>
-        </div>   
     </nav>
-    <p class="txt_right">© Neuralink 2025</p>
+
+    <p class="txt_right">© L'Empire d'Elon Musk 2025</p>
 </footer>
+
 </html>

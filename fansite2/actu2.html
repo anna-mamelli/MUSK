@@ -7,22 +7,36 @@
     <link rel="stylesheet" href="./../style.css">
     <title>Actualités</title>
 </head>
+
 <body>
-    <header>
+    <header role="banner">
         <!--Banner-->
         <!--<img class="logo" src="./../images/logo_spacex.jpg" title="SpaceX" alt="SpaceX">-->
         <h1 class="txt_orbitron">L'Empire d'Elon Musk</h1>
-        <nav class="flex_banner txt_bold">
-            <a class="txt_white" href="./../index.html"><img src="./../images/accueil.png" height="15" title="Accueil" alt="Accueil"></a>
-            <a class="txt_white" href="./../fansite1/fansite1.html"><img src="./../images/logo_tesla.jpg" height="15" title="Tesla" alt="TESLA"></a>
-            <a class="txt_white" href="./../fansite2/fansite2.html"><img class="logo_banner" src="./../images/logo_spacex.jpg" height="25" title="SpaceX" alt="SPACEX"></a>
-            <a class="txt_white" href="./../fansite3/fansite3.html"><img class="logo_banner" src="./../images/logo_neuralink.jpg" height="50" title="NeuraLink" alt="NEURALINK"></a>
+
+        <!-- Navigation principale -->
+        <nav class="flex_banner txt_bold" role="navigation" aria-label="Navigation principale">
+            <a class="txt_white" href="./../index.html">
+                <img src="./../images/accueil.png" height="15" title="Accueil" alt="Lien vers la page d’accueil">
+            </a>
+
+            <a class="txt_white" href="./../fansite1/fansite1.html">
+                <img src="./../images/logo_tesla.jpg" height="15" title="Tesla" alt="Lien vers Tesla">
+            </a>
+
+            <a class="txt_white" href="./../fansite2/fansite2.html">
+                <img class="logo_banner" src="./../images/logo_spacex.jpg" height="25" title="SpaceX" alt="Lien vers SpaceX">
+            </a>
+
+            <a class="txt_white" href="./../fansite3/fansite3.html">
+                <img class="logo_banner" src="./../images/logo_neuralink.jpg" height="50" title="NeuraLink" alt="Lien vers NeuraLink">
+            </a>
         </nav>
 
-        <!--Sub Banner-->
-        <nav class="flex_banner">
+        <!-- Navigation secondaire -->
+        <nav class="flex_banner" role="navigation" aria-label="Navigation secondaire">
             <div class="logo">
-                <img src="./../images/logo_spacex.jpg" title="spacex" alt="SPACEX">
+                <img src="./../images/logo_spacex.jpg" title="spacex" alt="Logo SpaceX">
             </div>
             <a class="txt_white txt_roboto" href="fansite2.html#section1">Actualités</a>
             <a class="txt_white txt_roboto" href="fansite2.html#section2">Réalisations</a>
@@ -30,62 +44,88 @@
         </nav>
     </header>
 
-    <main>
+    <article role="main" aria-labelledby="main-title">
         <!-- Title -->
-        <h1 class="txt_roboto margin_top actu_first_title">Actualités</h1>
+        <h1 id="main-title" class="txt_roboto margin_top actu_first_title">Actualités</h1>
         <h2 class="txt_roboto txt_center txt_white">Une multiplication par cinq de la masse lancée : la spectaculaire envolée des lancements de satellites</h2>
 
         <!-- Video -->
-        <video class="actu_video" src="./../video/actu2.mp4" controls></video>
+        <video 
+            class="actu_video" 
+            src="./../video/actu2.mp4" 
+            controls 
+            aria-label="Vidéo sur l'augmentation de la masse de satellites lancée dans l'espace">
+        </video>
 
-        <!-- Article -->
-        <div class="actu_box">    
+        <!-- Section 1 -->
+        <section class="actu_box" role="region" aria-label="Introduction sur la masse lancée">
             <p class="txt_roboto actu_p">
-                Ces dernières années, l'industrie spatiale connaît une révolution : non seulement le nombre de lancements de satellites explose, mais la masse totale mise en orbite augmente de façon fulgurante. Certains rapports évoquent une multiplication par cinq de la masse lancée — un indicateur puissant du boom des constellations et de l'essor commercial du spatial.
+                Ces dernières années, l'industrie spatiale connaît une révolution...
             </p>
-        </div>
+        </section>
 
-        <div class="actu_box">
-            <h3 class="actu_title txt_roboto">Des chiffres qui donnent le tournis</h3>
+        <!-- Section 2 -->
+        <section class="actu_box" role="region" aria-labelledby="titre-chiffres">
+            <h3 id="titre-chiffres" class="actu_title txt_roboto">Des chiffres qui donnent le tournis</h3>
             <ul class="txt_roboto actu_p">
-                <li>
-                    D'après l'ESA (Agence spatiale européenne), la masse lancée en 2024 atteint près de 2100 tonnes, soit une augmentation d'environ 41% par rapport à l'année précédente.
-                </li>
-                <li>
-                    Selon la Space Foundation, ce bond provient largement de la transition vers des satellites plus lourds, notamment les Starlink v2 mini, qui concentrent une partie très importante de cette masse.
-                </li>
-                <li>
-                    Le marché des lancements de satellites connaît ainsi une croissance très rapide : selon certaines projections, les lancements pourraient atteindre une moyenne de 7 tonnes mises en orbite chaque jour jusqu'en 2033.
-                </li>
+                <li>D'après l'ESA, la masse lancée en 2024 atteint près de 2100 tonnes...</li>
+                <li>Selon la Space Foundation, ce bond provient largement des satellites Starlink v2 mini...</li>
+                <li>Selon certaines projections, les lancements pourraient atteindre 7 tonnes mises en orbite par jour d'ici 2033.</li>
             </ul>
-        </div>
-        
-        <div class="actu_box">
-            <h3 class="actu_title txt_roboto">Un Vers l'avenir</h3>
-            <p class="txt_roboto actu_p">
-                Le scénario d'une multiplication par cinq de la masse lancée traduit bien plus qu'une simple tendance : c'est une transformation profonde du spatial, où l'orbite terrestre basse devient un domaine de plus en plus densément exploité.
+        </section>
 
-                Les constellations vont probablement continuer à dominer ce marché, mais des innovations (fusées encore plus réutilisables, satellites plus compacts, technologies de débris, etc.) seront essentielles pour que cette croissance reste soutenable — tant d'un point de vue technique, qu'économique et environnemental.
-            </p>
-        </div>
-        
-        <div class="actu_box">
-            <h3 class="actu_title txt_roboto">Une mission en deux temps : ascension et splash-down</h3>
+        <!-- Section 3 -->
+        <section class="actu_box" role="region" aria-labelledby="titre-avenir">
+            <h3 id="titre-avenir" class="actu_title txt_roboto">Vers l'avenir</h3>
             <p class="txt_roboto actu_p">
-                Les images montrent aussi bien l'ascension que la séparation des deux étages de la fusée : une fois le booster décroché, la partie Starship continue vers la haute altitude tandis que le Super Heavy commence sa manœuvre de retour. 
-                Le vaisseau supérieur, quant à lui, termine sa trajectoire en amerrissant dans l'océan Indien, comme prévu, confirmant ainsi un vol partiellement "réussi" selon SpaceX.
+                Le scénario d'une multiplication par cinq de la masse lancée traduit bien plus qu'une tendance...
             </p>
-        </div>
-        
-        <div class="actu_box">
-            <h3 class="actu_title txt_roboto">Réaction de SpaceX et portée médiatique</h3>
+        </section>
+
+        <!-- Section 4 -->
+        <section class="actu_box" role="region" aria-labelledby="titre-mission">
+            <h3 id="titre-mission" class="actu_title txt_roboto">Une mission en deux temps : ascension et splash-down</h3>
             <p class="txt_roboto actu_p">
-                Malgré certains dommages subis pendant la rentrée, SpaceX a salué ce vol comme un véritable pas en avant. 
-                Les images diffusées en direct par la société ont été suivies par un large public, soulignant non seulement la prouesse technique, mais aussi la dimension spectaculaire et presque cinématographique de cette mission — un mélange d'ingénierie de pointe et d'ambition visionnaire. 
-                Elon Musk et son équipe semblent avoir gagné une nouvelle manche dans leur course vers la réutilisabilité totale, et les images de ce test offrent un aperçu tangible de leur progression vers des missions de plus grande envergure, notamment vers la Lune ou Mars.
+                Les images montrent aussi bien l'ascension que la séparation des deux étages...
             </p>
-        </div>
-        
-    </main>
+        </section>
+
+        <!-- Section 5 -->
+        <section class="actu_box" role="region" aria-labelledby="titre-reaction">
+            <h3 id="titre-reaction" class="actu_title txt_roboto">Réaction de SpaceX et portée médiatique</h3>
+            <p class="txt_roboto actu_p">
+                Malgré certains dommages subis pendant la rentrée, SpaceX a salué ce vol comme un véritable pas en avant...
+            </p>
+        </section>
+
+    </article>
 </body>
+
+<footer role="contentinfo">
+    <nav class="flex_footer" role="navigation" aria-label="Navigation du pied de page">
+        <a href="./../index.html">Page d'accueil</a>
+
+        <div class="flex_link" role="region" aria-labelledby="footer-entreprises">
+            <h4 id="footer-entreprises">Entreprises</h4>
+            <a href="./../fansite1/fansite1.html">Tesla</a>
+            <a href="./../fansite2/fansite2.html">SpaceX</a>
+            <a href="./../fansite3/fansite3.html">NeuraLink</a>
+        </div>
+
+        <div class="flex_link" role="region" aria-labelledby="footer-spacex">
+            <h4 id="footer-spacex">SpaceX</h4>
+            <a href="#section1">Actualités</a>
+            <a href="#section2">Réalisation</a>
+        </div>
+
+        <div class="flex_link" role="region" aria-labelledby="footer-contact">
+            <h4 id="footer-contact">Contact</h4>
+            <a href="mailto:Elon.Musk@spacex.com">Mail</a>
+            <a href="https://x.com/elonmusk">X</a>
+        </div>
+    </nav>
+
+    <p class="txt_right">© L'Empire d'Elon Musk 2025</p>
+</footer>
+
 </html>

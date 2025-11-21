@@ -1,11 +1,12 @@
-
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Roboto', sans-serif;
 }
-/* BANNER */
+
+/* ---------------- BANNER ---------------- */
+
 .logo_subbanner {
     width: 20%;
 }
@@ -18,11 +19,11 @@
     background: #000;
 }
 
-
 .flex_banner .logo_subbanner img {
     max-width: 110px;
 }
-/*-----------*/
+
+/* ---------------- MENU BOUTONS ---------------- */
 
 .boutons {
     display: flex;
@@ -45,16 +46,16 @@
     color: #000000;
 }
 
+/* ---------------- HEADER ---------------- */
 
 .header {
     display: grid;
     grid-template-columns: 1fr 3fr;
-    padding: 0px 0px;
     background-color: #414141;
     align-items: center;
     color: #fff;
+    padding: 0;
 }
-
 
 .logo img {
     width: 150px;
@@ -62,12 +63,12 @@
     object-fit: contain;
 }
 
+/* ---------------- MAIN ---------------- */
 
 main {
     background-color: #7E7E7E;
     padding: 20px;
 }
-
 
 .imagedelavoiture {
     width: 100%;
@@ -77,19 +78,19 @@ main {
 }
 
 h1 {
-    size: 20px;
     text-align: center;
     margin: 30px 0;
     color: #fff;
 }
+
 h2 {
     size: 50px;
 }
 
-.voitures {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr;
+/* ---------------- CONTENT BOXES ---------------- */
+
+.voitures,
+.texte-cadre {
     border: 2px solid #333;
     padding: 15px;
     margin-top: 10px;
@@ -101,6 +102,13 @@ h2 {
     font-size: 1rem;
     line-height: 1.4;
     box-shadow: 0.5rem .2rem 1rem #ffffff;
+}
+
+/* voitures grid */
+.voitures {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(4, 1fr);
 }
 
 .gallery {
@@ -117,24 +125,99 @@ h2 {
     margin-top: 20px;
 }
 
-.texte-cadre {
-    border: 2px solid #333;
-    padding: 15px;
-    margin-top: 10px;
-    background-color: #585858;
-    border-radius: 8px;
-    width: 100%;
-    max-width: 400px;
-    color: #fff;
-    font-size: 1rem;
-    line-height: 1.4;
-    box-shadow: 0.5rem .2rem 1rem #ffffff;
-}
-
-img{
+img {
     box-shadow: 0.5rem .2rem 1rem #000000;
 }
 
 .titre {
     text-align: center;
+}
+
+/* ---------------------------------------------------------- */
+/* ------------------------ RESPONSIVE ----------------------- */
+/* ---------------------------------------------------------- */
+
+/* ---------------- TABLETTES ---------------- */
+
+@media (max-width: 1024px) {
+
+    .flex_banner {
+        padding: 10px 3%;
+    }
+
+    .gallery {
+        flex-direction: column;
+        align-items: center;
+        gap: 50px;
+        margin: 40px auto;
+    }
+
+    .header {
+        grid-template-columns: 1fr 2fr;
+    }
+
+    .logo img {
+        width: 120px;
+        height: 120px;
+    }
+
+    .voitures {
+        grid-template-columns: 1fr 1fr;
+        max-width: 350px;
+    }
+}
+
+/* ---------------- SMARTPHONES ---------------- */
+
+@media (max-width: 600px) {
+
+    /* BANNER items stay inline but shrink */
+    .flex_banner {
+        flex-wrap: nowrap;
+        gap: 10px;
+    }
+
+    .flex_banner * {
+        transform: scale(0.85);
+        white-space: nowrap;
+    }
+
+    .boutons {
+        flex-wrap: wrap;
+        gap: 10px;
+        padding: 15px;
+    }
+
+    .header {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 10px;
+        padding: 10px 0;
+    }
+
+    .logo img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .gallery {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .voitures {
+        grid-template-columns: 1fr;
+        max-width: 100%;
+        font-size: 0.9rem;
+    }
+
+    .texte-cadre {
+        max-width: 100%;
+        font-size: 0.9rem;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+        margin: 20px 0;
+    }
 }

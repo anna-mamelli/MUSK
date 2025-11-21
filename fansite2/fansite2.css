@@ -63,7 +63,7 @@ body::before {
 }
 
 .description {
-    background-image: url('./../images/mars.jpg');
+    background-image: url('./../images/Planete_Mars.jpg');
 }
 
 .realisation_box {
@@ -175,9 +175,10 @@ body::before {
     padding: 1% 5%;
 }
 
-.img_center {
+.img_actu {
     display: block;
     margin: 2% auto;
+    height: 20vh;
 }
 
 .actu_video {
@@ -240,8 +241,6 @@ button:hover {
     background: #5a5b5b;
     color: #fff;
 }
-
-/* ---------- HERO ---------- */
 
 .hero {
     background: #6e6e6e;
