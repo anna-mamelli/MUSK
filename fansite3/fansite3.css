@@ -38,6 +38,7 @@
 }
 body {
     position: relative;
+    padding-top: 80px;
 }
 
 body::before {
@@ -115,6 +116,65 @@ body::before {
     text-shadow: 0 2px 6px rgba(0,0,0,.6);
     z-index: 2;
 }
+
+.video-background {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* prend toute la hauteur de l’écran */
+    overflow: hidden;
+}
+
+.video-background video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: -1;
+    transform: translate(-50%, -50%);
+    object-fit: cover; /* remplit le conteneur sans déformer */
+}
+
+.video-background .content {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    color: white;
+    padding-top: 20vh;
+}
+
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 0;
+}
+
+.video-container video {
+    width: 350px;        /* même largeur que tes images */
+    height: 250px;       /* même hauteur que tes images */
+    border-radius: 15px; /* même border-radius */
+    object-fit: cover;   /* remplit le conteneur sans déformer */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+
+video {
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.photo-item video,
+.photo-item iframe {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;      /* remplit le conteneur sans déformer */
+    border-radius: 12px;    /* même radius que les images */
+    display: block;
+}
+
 
 /********************************************
  * HERO (in CARRER)
@@ -274,7 +334,7 @@ button:hover {
 }
 
 .location {
-    color: #666;
+    color: #ffffff;
     font-size: .9rem;
 }
 
@@ -341,11 +401,23 @@ button:hover {
     margin-bottom: 40px;
 }
 
-.press-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-    gap: 30px;
+.press {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* centre le titre ET la grille */
 }
+
+.press-grid {
+    display: flex;
+    flex-wrap: nowrap;        /* empêche le wrapping si assez d'espace */
+    justify-content: center;  /* centre la ligne contenant les 3 blocs */
+    align-items: stretch;
+    gap: 30px;
+    width: 100%;
+    max-width: 1200px;        /* limite la largeur du groupe */
+    margin: 0 auto;
+}
+
 
 .press-card {
     background: #fff;
@@ -392,122 +464,324 @@ button:hover {
     font-style: italic;
 }
 
+
+/********************************************
+ * TCHAT
+ ********************************************/
+/* float button */
+.chat-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #353535;
+    color: white;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.3);
+    z-index: 9999;
+}
+
+/* tchat window */
+.chat-box {
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 280px;
+    max-height: 380px;
+    background: rgba(0,0,0,0.8);
+    backdrop-filter: blur(6px);
+    border-radius: 12px;
+    overflow: hidden;
+    color: white;
+    box-shadow: 0 4px 18px rgba(0,0,0,0.3);
+    transform: scale(0);
+    transform-origin: bottom right;
+    transition: transform .3s ease;
+    z-index: 9998;
+}
+
+/* Display when box is checked */
+.chat-toggle:checked ~ .chat-box {
+    transform: scale(1);
+}
+
+/* Header */
+.chat-header {
+    padding: 12px;
+    background: #222;
+    font-weight: bold;
+    border-bottom: 1px solid #444;
+    text-align: center;
+}
+
+/* Messages Zone */
+.chat-content {
+    padding: 10px;
+    height: 230px;
+    overflow-y: auto;
+    font-size: 0.9rem;
+}
+
+.chat-input input,
+.chat-input button {
+    padding: 10px;
+    border: none;
+}
+
+.chat-input input {
+    flex: 1;
+    background: #111;
+    color: #aaa;
+}
+
+.chat-input button {
+    background: #838383;
+    color: white;
+}
+
+
 /********************************************
  * RESPONSIVE DESIGN
  ********************************************/
 
-/* 📱 SMARTPHONE (≤ 600px) */
-@media (max-width: 600px) {
+/* 1. SMARTPHONES (≤ 767px) */
+@media (max-width: 767px) {
+    .flex_banner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 15px 5%;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
 
     .media-wrapper {
-        flex-direction: column !important;
+        flex-direction: column;
         gap: 20px;
         padding: 20px 5%;
-        width: 100%;
     }
 
     .medias,
-    .photos-videos {
-        width: 100% !important;
-        max-width: 100% !important;
+    .photos-videos,
+    .video-container video {
+        width: 100%;
+        height: auto;
+    }
+
+    .photo-item img {
         height: 200px;
     }
 
-    .media-title {
-        font-size: 1.4rem;
-        text-align: center;
+    .hero {
+        padding: 30px 5%;
     }
 
-    .medias::before,
-    .photos-videos::before {
-        object-fit: cover;
+    .hero h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero p {
+        font-size: 0.95rem;
+    }
+
+    .gallery-container {
+        padding: 10px;
+    }
+
+    .photo-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .contact-form {
+        padding: 1.5rem;
+    }
+
+    .offer {
+        padding: 20px 5%;
+    }
+
+    .carrer-info {
+        padding: 15px 5%;
+    }
+
+    .press {
+        padding: 30px 5%;
+    }
+
+    .press-grid {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .press-card img {
+        height: 150px;
+    }
+
+    .flex_footer {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    /* Chat button smaller on mobile */
+    .chat-button {
+        width: 45px;
+        height: 45px;
+        font-size: 20px;
+        bottom: 15px;
+        right: 15px;
+    }
+
+    .chat-box {
+        width: 90%;
+        max-height: 300px;
+        bottom: 70px;
+        right: 5%;
     }
 }
 
-/* 📱💻 TABLET (600px – 992px) */
-@media (min-width: 600px) and (max-width: 992px) {
+/* 2. TABLETS (768px – 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+    .flex_banner {
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        padding: 15px 5%;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
 
     .media-wrapper {
-        gap: 25px;
+        flex-wrap: wrap;
+        gap: 20px;
         padding: 30px 5%;
     }
 
     .medias,
-    .photos-videos {
-        width: 45%;
-        height: 220px;
+    .photos-videos,
+    .video-container video {
+        width: 300px;
+        height: 200px;
     }
 
-    .media-title {
-        font-size: 1.6rem;
+    .photo-item img {
+        height: 250px;
     }
 
-    body::before {
-        height: 60vh;
+    .hero {
+        padding: 40px 5%;
     }
 
-    .photo-grid {
-        grid-template-columns: repeat(2, 1fr);
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .offer {
+        padding: 30px 5%;
+    }
+
+    .carrer-info {
+        padding: 15px 5%;
+    }
+
+    .press {
+        padding: 40px 5%;
     }
 
     .press-grid {
-        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .press-card img {
+        height: 150px;
     }
 }
 
-/* 💻 COMPUTER (992px – 1400px) */
-@media (min-width: 992px) and (max-width: 1400px) {
-
+/* 3. COMPUTER (1025px – 1440px) */
+@media (min-width: 1025px) and (max-width: 1440px) {
     .media-wrapper {
-        gap: 30px;
+        gap: 25px;
+        padding: 40px 8%;
     }
 
     .medias,
-    .photos-videos {
-        width: 320px;
-        height: 240px;
+    .photos-videos,
+    .video-container video {
+        width: 350px;
+        height: 250px;
     }
 
-    body::before {
-        height: 80vh;
+    .photo-item img {
+        height: 320px;
+    }
+
+    .gallery-container {
+        padding: 12px;
     }
 
     .photo-grid {
-        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+    }
+
+    .press {
+        padding: 50px 8%;
     }
 
     .press-grid {
-        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
     }
 }
 
-/* 🖥️ BIG SCREEN (≥ 1400px) */
-@media (min-width: 1400px) {
-
+/* 4. BIG SCREENS (> 1440px) */
+@media (min-width: 1441px) {
     .media-wrapper {
-        gap: 40px;
+        gap: 30px;
         padding: 50px 10%;
     }
 
     .medias,
-    .photos-videos {
+    .photos-videos,
+    .video-container video {
         width: 400px;
-        height: 300px;
+        height: 280px;
     }
 
-    .media-title {
-        font-size: 2rem;
+    .photo-item img {
+        height: 360px;
     }
 
-    body::before {
-        height: 100vh;
+    .gallery-container {
+        padding: 20px 10%;
     }
 
     .photo-grid {
-        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    .press {
+        padding: 60px 10%;
     }
 
     .press-grid {
-        grid-template-columns: repeat(4, 1fr);
+        gap: 30px;
     }
 }

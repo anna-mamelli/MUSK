@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.logo {
+    width: 20%;
+}
+
+.flex_banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 5%;
+    background: #000;
+    margin-bottom: 2%;
+}
+
+.flex_banner .logo img {
+    max-width: 110px;
+}
+
+.boutons {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    padding: 10px;
+    background-color: #141414;
+    margin-bottom: 20px;
+    margin-top: 5px;
+    border-radius: 8px;
+    box-shadow: 0.5rem .2rem 1rem #ffffff;
+}
+
+
+.boutons a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.boutons a:hover {
+    color: #000000;
+}
+
+.header {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    height: 150px;
+    padding: 10px 20px;
+    background-color: #414141;
+    align-items: center;
+    color: #fff;
+}
+
+.voitures {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+    margin: 50px auto;
+    max-width: 1200px;
+}
+
+main {
+    background-color: #7E7E7E;
+    padding: 20px;
+}
+
+.voiture-card {
+    flex: 1 1 calc(33.333% - 40px);
+    max-width: 350px;
+    background-color: #585858;
+    border: 2px solid #333;
+    border-radius: 8px;
+    box-shadow: 0.5rem 0.2rem 1rem #ffffff;
+    color: #fff;
+    font-size: 1rem;
+    line-height: 1.4;
+    padding: 15px;
+    text-align: center;
+    
+}
+
+.voiture-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 6px;
+    margin-bottom: 10px;
+    box-shadow: 0.5rem 0.2rem 1rem #000000;
+}
+
+h3 {
+    background-color: #141414;
+    margin: 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    box-shadow: 0.5rem .2rem 1rem #ffffff;
+}
+
+h3:hover {
+    transform: scale(1.02); /* zoom léger (5%) */
+    box-shadow: 0.8rem 0.4rem 1.2rem #000000;
+}
+
+.titre {
+    text-align: center;
+}

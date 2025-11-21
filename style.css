@@ -128,7 +128,7 @@ h3 {
 .flex_transparent {
     display: flex;
     gap: 5%;
-    margin: 0 2%;
+    margin: 2% 10%;
     justify-content: center;
 }
 
@@ -316,5 +316,11 @@ h3 {
 
     .txt_right {
         text-align: center;
+    }
+}
+/* ---------- LITTLE SMARTPHONES ---------- */
+@media (max-width: 480px) {
+    .flex_banner {
+       transform: scale(0.7);
     }
 }
