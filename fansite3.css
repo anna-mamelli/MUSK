@@ -511,6 +511,14 @@ button:hover {
     transform: scale(1);
 }
 
+.chat-toggle {
+  position: absolute; 
+  opacity: 0;         /* rend invisible */
+  width: 0;
+  height: 0;
+  pointer-events: none; 
+}
+
 /* Header */
 .chat-header {
     padding: 12px;
