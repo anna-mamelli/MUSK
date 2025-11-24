@@ -175,6 +175,13 @@ video {
     display: block;
 }
 
+.img_photovideo {
+    width: 100%;
+    max-width: 560px;
+    border-radius:8px;
+    cursor:pointer;
+}
+
 
 /********************************************
  * HERO (in CARRER)
