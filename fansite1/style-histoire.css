@@ -65,11 +65,14 @@ main {
     padding: 20px;
 }
 
+
+
 .paragraphe {
     display: flex;
     flex-direction: column;
     align-items: stretch;
     gap: 30px;
+    text-align: center;
 }
 
 .texte {
@@ -81,6 +84,12 @@ main {
     align-items: flex-end;
     gap: 20px;
     box-shadow: 0.5rem .2rem 1rem #ffffff;
+}
+
+.img_histoire {
+    width: 400px; 
+    height: 250px; 
+    border-radius: 8px;
 }
 
 .image {

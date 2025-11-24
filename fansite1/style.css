@@ -70,6 +70,11 @@ main {
     padding: 20px;
 }
 
+.title {
+    font-size: 50px;
+    margin: 50px;
+}
+
 .imagedelavoiture {
     width: 100%;
     height: auto;
@@ -123,6 +128,13 @@ h2 {
 .image-container {
     text-align: center;
     margin-top: 20px;
+}
+
+.img_description {
+    width: 400px;
+    height: 250px;
+    border-radius: 8px;
+    box-shadow: #666;
 }
 
 img {
